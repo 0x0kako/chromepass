@@ -111,7 +111,17 @@ def getpath():
         if (os.path.isdir(PathName) == False):
             print('[!] Chrome Doesn\'t exists')
             sys.exit(0)
+    elif (os.name == "posix"):
+        # This is the Linux Chromium Path
+        PathName = os.getenv('HOME') + '~/.config/chromium/Default/'
+        if (os.path.isdir(PathName) == False):
+            print('[!] Chromium Doesn\'t exists')
+            sys.exit(0)
 
+
+
+		
+		
     return PathName
 
 
