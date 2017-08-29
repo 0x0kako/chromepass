@@ -96,22 +96,32 @@ def getpath():
         PathName = os.getenv('localappdata') + \
             '\\Google\\Chrome\\User Data\\Default\\'
         if (os.path.isdir(PathName) == False):
-            print('[!] Chrome Doesn\'t exists')
+            print('[!] Chrome Doesn\'t exist')
             sys.exit(0)
     elif ((os.name == "posix") and (sys.platform == "darwin")):
         # This is the OS X Path
         PathName = os.getenv(
             'HOME') + "/Library/Application Support/Google/Chrome/Default/"
         if (os.path.isdir(PathName) == False):
-            print('[!] Chrome Doesn\'t exists')
+            print('[!] Chrome Doesn\'t exist')
             sys.exit(0)
     elif (os.name == "posix"):
         # This is the Linux Path
         PathName = os.getenv('HOME') + '/.config/google-chrome/Default/'
         if (os.path.isdir(PathName) == False):
-            print('[!] Chrome Doesn\'t exists')
+            print('[!] Chrome Doesn\'t exist')
+            sys.exit(0)
+    elif (os.name == "posix"):
+        # This is the Linux Chromium Path
+        PathName = os.getenv('HOME') + '~/.config/chromium/Default/'
+        if (os.path.isdir(PathName) == False):
+            print('[!] Chromium Doesn\'t exist')
             sys.exit(0)
 
+
+
+		
+		
     return PathName
 
 
